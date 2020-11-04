@@ -1,23 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import List from './List';
+var contentful = require('contentful');
 
 function App() {
+  const [recipes, setRecipes] = useState([]);
+  useEffect(() => {
+var client = contentful.createClient({
+  space: 'ltbvafjdgsae',
+  accessToken: 'GCAqscWzmWWKUypH8AbmC9paHfRbhacPWYHpTlSzvwc'
+})
+client.getEntries().then((entries) => {
+  setRecipes(entries.items);
+});
+}, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <List />
+     
+  
     </div>
   );
 }
