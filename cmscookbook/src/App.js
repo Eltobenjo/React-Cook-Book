@@ -8,6 +8,8 @@ function App() {
   return (
     <div className="App">
 <NavLink to ='/List'>List</NavLink>
+<br/>
+<br/>
 <NavLink to ='/Detail'>Detail</NavLink>
 
 
