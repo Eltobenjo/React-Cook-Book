@@ -1,0 +1,1 @@
+Here we try to feed a cookbook with dynamic data from Contentist in React.
