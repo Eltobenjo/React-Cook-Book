@@ -1,0 +1,19 @@
+.footer {
+    height: 100px;
+    width: 100%;
+    background-color: #dff1d9;
+    color: black;
+    text-align: center;
+    position: relative;
+    
+    padding-top: 1rem;
+    
+    
+    
+    
+}
+
+.footer>a {
+    margin-right: 1rem;
+}
+
