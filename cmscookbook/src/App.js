@@ -1,7 +1,11 @@
-import logo from './logo.svg';
+import React from 'react';
+import {Switch, Route, NavLink} from 'react-router-dom'
 import './App.css';
 import List from './List';
+
 var contentful = require('contentful');
+
+
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -16,9 +20,11 @@ client.getEntries().then((entries) => {
 }, []);
   return (
     <div className="App">
+
       <List />
      
   
+
     </div>
   );
 }
