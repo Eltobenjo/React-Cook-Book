@@ -1,20 +1,24 @@
 import React from 'react';
-import Breakfast from './Breakfast';
+import Breakfast from './FenchToast';
 import Lunch from './Lunch';
 import Dinner from './Dinner';
 import Dessert from './Dessert';
 import {Switch, Route, NavLink} from 'react-router-dom'
 
 function Recipes(){
-    return <div classname ='main'>
+    return <div className ='main'>
 
+    
 
-<div classname ='nav'>
+<div className ='nav'>
+
 <NavLink to ='/Breakfast'>Breakfast</NavLink>
+
+
 <NavLink to ='/Lunch'>Lunch</NavLink>
 <NavLink to ='/Dinner'>Dinner</NavLink>
 <NavLink to ='/Dessert'>Dessert</NavLink>
-</div>
+
 
 
 <Switch>
@@ -26,7 +30,7 @@ function Recipes(){
 
 
 
-
+</div>
 
 </div>
 

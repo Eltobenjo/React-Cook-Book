@@ -1,36 +1,43 @@
-import React from 'react';
-import {Switch, Route,NavLink} from 'react-router-dom'
-import './App.css';
-import Header from './components/Header';
-import Home from './components/Home';
-import Contact from './components/Contact';
-import Recipes from './components/Recipes';
-import Footer from'./components/Footer';
+import React, { useState, useEffect } from 'react'
+import Footer from './components/Footer'
+import Header from './components/ui/Header'
+import RecipeGrid from './components/RecipeGrid'
+
+import './App.css'
 
 
 
 
+  var contentful = require('contentful');
 
 
 function App() {
+  const [recipes, setRecipes] = useState([]);
  
+  useEffect(() => {
+var client = contentful.createClient({
+  space: '7f7xzl6mcsv0',
+  accessToken: 'l0CFKRve4qqQu6suVO7F1cjqdAijVhBiK1eyXjsYyVY'
+})
+client.getEntries()
+.then((entries) => {
+  setRecipes(entries.items);
+ 
+  console.log(entries)
+
+
+});
+}, []);
+  
   return (
-    <div className="App">
-    <Header />
-  <NavLink to ='/Home'>Home</NavLink>
+    <div className='container'>
+      <Header />
+     
+      <RecipeGrid  recipes={recipes} />
 
-<NavLink to ='/Contact'>Contact</NavLink>
-    
-<Recipes />
-<Footer />
-    <Switch>
-    <Route path='/Contact'><Contact /></Route>
-    <Route path='/Home'><Home /></Route>
-    <Route path='/Recipes'><Recipes /></Route>
-    </Switch>
+      <Footer/>
     </div>
-
-  );
+  )
 }
 
-export default App;
+export default App
