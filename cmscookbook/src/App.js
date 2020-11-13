@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Footer from './components/Footer'
-import Header from './components/ui/Header'
+import Header from './components/Header'
 import RecipeGrid from './components/RecipeGrid'
-
+import Info from './components/Info'
 import './App.css'
-
+import {Switch, Route, Link} from 'react-router-dom'
 
 
 
@@ -32,9 +32,12 @@ client.getEntries()
   return (
     <div className='container'>
       <Header />
-     
-      <RecipeGrid  recipes={recipes} />
-
+   
+      
+<Switch>
+<Route path='/RecipeGrid'><RecipeGrid  recipes={recipes} /></Route>
+      <Route path='/Info'><Info /></Route>
+      </Switch>
       <Footer/>
     </div>
   )
