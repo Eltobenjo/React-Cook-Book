@@ -3,13 +3,16 @@ import RecipeItem from './RecipeItem'
 
 
 const RecipeGrid = ({recipes}) => {
-  console.log(recipes)
-  
+ console.log(recipes)
+
   return (
     
 
-<section className='cards'>
-      {recipes.map((recipe, ) => 
+<section className ='cards'>
+
+
+    {recipes.map((recipe)  =>  
+     
        <RecipeItem key={recipe.sys.id} recipe= {recipe}>post</RecipeItem>
       )}
 </section>
@@ -18,4 +21,4 @@ const RecipeGrid = ({recipes}) => {
 
 export default RecipeGrid
 
-       
+      
