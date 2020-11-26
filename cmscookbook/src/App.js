@@ -8,35 +8,38 @@ import {Switch, Route} from 'react-router-dom'
 
 
 
-  var contentful = require('contentful');
 
 
 function App() {
   const [recipes, setRecipes] = useState([]);
  
   useEffect(() => {
-var client = contentful.createClient({
-  space: '7f7xzl6mcsv0',
-  accessToken: 'l0CFKRve4qqQu6suVO7F1cjqdAijVhBiK1eyXjsYyVY'
-})
-client.getEntries()
-.then((entries) => {
-  setRecipes(entries.items);
- 
-  console.log(entries)
+   
+     fetch('http://localhost:4000' )
+     
+       .then(res => res.json())
+        .then(res =>{setRecipes(res.recipes)
+        console.log(res)}
+       );
+       
 
 
-});
-}, []);
-  
+
+      
+       
+  },[]);
+
+
   return (
     <div className='container'>
       <Header />
-   
       
+  
+  
 <Switch>
 <Route path='/RecipeGrid'><RecipeGrid  recipes={recipes} /></Route>
       <Route path='/Info'><Info /></Route>
+    
       </Switch>
       <Footer/>
     </div>

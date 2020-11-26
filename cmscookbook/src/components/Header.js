@@ -1,6 +1,6 @@
 import React from 'react'
-import Info from './Info'
-import {Switch, Route, Link} from 'react-router-dom'
+
+import { Link} from 'react-router-dom'
 const Header = () => {
   return (
     <header className='center'>
