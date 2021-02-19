@@ -5,9 +5,7 @@ import RecipeGrid from './components/RecipeGrid'
 import Info from './components/Info'
 import './App.css'
 import {Switch, Route} from 'react-router-dom'
-
-
-
+import {client} from './components/Client'
 
 
 function App() {
@@ -15,18 +13,11 @@ function App() {
  
   useEffect(() => {
    
-     fetch('http://localhost:4000' )
-     
-       .then(res => res.json())
-        .then(res =>{setRecipes(res.recipes)
-        console.log(res)}
-       );
-       
-
-
-
-      
-       
+    client.getEntries().then((entries) => {
+      setRecipes(entries.items);
+      console.log(entries);
+    });
+            
   },[]);
 
 
