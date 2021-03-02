@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import RecipeGrid from './components/RecipeGrid'
-import Info from './components/Info'
+import Home from './components/Home'
 import './App.css'
 import {Switch, Route} from 'react-router-dom'
 import {client} from './components/Client'
@@ -29,7 +29,7 @@ function App() {
   
 <Switch>
 <Route path='/RecipeGrid'><RecipeGrid  recipes={recipes} /></Route>
-      <Route path='/Info'><Info /></Route>
+      <Route path='/'><Home /></Route>
     
       </Switch>
       <Footer/>

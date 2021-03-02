@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Info = () => {
+const Home = () => {
     return (
         <div className='center'>
             <img src='./img/veganstats.jpg' width='80%' height='100%' alt='Info'/>
@@ -8,4 +8,4 @@ const Info = () => {
     )
 }
 
-export default Info
+export default Home
